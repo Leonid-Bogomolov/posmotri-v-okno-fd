@@ -49,6 +49,20 @@ ol {
   block-size: 34px;
   color: #fff;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 /* Кастомный скроллбар */
@@ -92,6 +106,7 @@ ol {
 }
 
 .result__video-container {
+  position: relative;
   inline-size: 100%;
 }
 
@@ -116,22 +131,105 @@ ol {
   font-weight: 400;
 }
 
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  /*position: relative;*/
+}
+
 .city {
   inline-size: 225px;
 }
 
 .search-form__textfield {
+  appearance: none;
   border: none;
-  border-top: 1px solid #545050;
-  border-bottom: 1px solid #545050;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   background-color: transparent;
   font-size: 16px;
   color: #fff;
   inline-size: 100%;
+  cursor: pointer;
 }
+
+.search-form__textfield:focus {
+  outline: none;
+  /*border: none;*/
+}
+
+/*.search-form__textfield:focus-visible {
+  border-color: transparent;
+  outline: none;
+}*/
+
+.search-form__label:has(:focus-visible) {
+  appearance: none;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/*.search-form__label:focus-visible .search-form__fieldset {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}*/
 
 .time {
   inline-size: 212px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label_checkbox {
+  padding: 0 1px;
+  cursor: pointer;
+}
+
+.label_checkbox:hover {
+  text-decoration: underline;
+}
+
+.search-form__checkbox {
+  display: block;
+  /*inline-size: 1rem;
+  block-size: 1rem;*/
+  background-color: transparent;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  border: 1px solid #fff;
+  background-color: transparent; 
+}
+
+.label_checkbox .search-form__label-text {
+  /*pointer-events: auto;*/
+  margin-left: 5px;
+}
+
+.search-form__label-text:hover .search-form__label-text {
+text-decoration:underline;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  /*content: '';*/
+  display: block;
+  inline-size: 1rem;
+  block-size: 1rem;
+  border: 1px solid transparent;
+  background-color: #fff;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+  margin-right: .1rem;
 }
 
 .search-form__submit-button {
@@ -140,7 +238,6 @@ ol {
 }
 
 .content__details {
-  /*align-self: end;*/
   inline-size: 399px;
 }
 
@@ -160,19 +257,31 @@ ol {
 .content__list-container {
   block-size: 298px;
   overflow: auto;
+  padding-bottom: 3px;
+  position: relative;
 }
 
 .content__list {
+  /*position: relative;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
+  padding-top: 3px;
   margin-bottom: 30px;
+}
+
+.content__list-item {
+  padding: 0 3px;
 }
 
 .content__card-link {
   text-decoration: none;
   color: #fff;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -181,11 +290,20 @@ ol {
   align-items: flex-start;
 }
 
-.content__video-card-description-container {
-  inline-size: 51.4%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .content__video-card-title {
@@ -196,6 +314,13 @@ ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.content__video-card-description-container {
+  inline-size: 51.4%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .content__video-card-description {                        /*с учётом вендорных префиксов*/
@@ -214,6 +339,20 @@ ol {
   inline-size: 100%;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
 .more-button {
-  inline-size: 100%;
+  inline-size: calc(100% - 6px);
+}
+
+.preloader-chasing-squares {
+  position: absolute;
+}
+
+.square {
+  position: absolute;
+  inset: 0;
 }

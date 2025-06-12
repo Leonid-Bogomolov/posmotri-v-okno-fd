@@ -278,9 +278,9 @@ ol {
 }
 
 .content__list-container {
-  block-size: 298px;
+  max-block-size: 298px;
   overflow: auto;
-  padding-bottom: 3px;
+  padding: 0 3px 3px;
   position: relative;
 }
 
@@ -292,14 +292,13 @@ ol {
   padding-top: 3px;
 }
 
-.content__list-item {
-  padding: 0 3px;
-  /*outline: 1px solid white;*/ /* тенический вспомогателный outline */
-}
-
 .content__card-link {
   text-decoration: none;
   color: #fff;
+}
+
+.content__card-link_current .content__video-card {
+  background-color: #545050;
 }
 
 .content__card-link:hover {
@@ -364,16 +363,8 @@ ol {
   block-size: 100px;
 }
 
-.more-button-template {
-  inline-size: 100%;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
 .more-button {
-  inline-size: calc(100% - 6px);
+  align-self: center;
+  inline-size: 100%;
+  margin: 30px auto 0;
 }

@@ -5,6 +5,9 @@
 }
 
 html {
+  display: flex; /* выравниванние всего контента приложения по центру экрана монитора*/
+  justify-content: center;
+  align-items: center;
   block-size: 100%;
 }
 
@@ -42,7 +45,8 @@ ol {
 
 .button {
   appearance: none;
-  font-size: 1.13rem;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 1.1rem;
   font-weight: 700;
   border: 1px solid #fff;
   block-size: 33px;
@@ -105,7 +109,7 @@ ol {
   justify-content: space-between;
   inline-size: 711px;
   min-block-size: 456px;
-  /*outline: 1px solid white;*/
+  /*outline: 1px solid white;*/ /* тенический вспомогателный outline */
 }
 
 .result__video-container {
@@ -138,6 +142,7 @@ ol {
 }
 
 .search-form__fieldset-title {
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 1.13rem;
   font-weight: 400;
   letter-spacing: -0.01rem;
@@ -154,19 +159,35 @@ ol {
   margin-top: 4px;
 }
 
+.search-form__label-text {
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
 .search-form__textfield {
   appearance: none;
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   background-color: transparent;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 1.13rem;
-  letter-spacing: -0.04rem;
+  letter-spacing: -0.01rem;
   color: #fff;
   inline-size: 225px;
   block-size: 27px;
   cursor: pointer;
   padding-left: 0;
+}
+
+.search-form__textfield:active {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.search-form__label:has(.search-form__textfield:active) {
+  outline: none;
 }
 
 .search-form__textfield:focus {
@@ -235,7 +256,6 @@ ol {
 
 .search-form__submit-button {
   align-self: flex-end;
-  font-size: 0.95rem;
   inline-size: 194px;
 }
 
@@ -245,12 +265,12 @@ ol {
 
 .title {
   font-family: Oswald, sans-serif;
-  font-size: 4.65rem;
+  font-size: 4.66rem;
   line-height: 94%;
   text-transform: uppercase;
   inline-size: 100%;
   margin-bottom: 21px;
-  /*outline: 1px solid white;*/
+  /*outline: 1px solid white;*/ /* тенический вспомогателный outline */
 }
 
 .content__accent {
@@ -268,14 +288,13 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
+  gap: 33px;
   padding-top: 3px;
-  margin-bottom: 30px;
 }
 
 .content__list-item {
   padding: 0 3px;
-  /*outline: 1px solid white;*/
+  /*outline: 1px solid white;*/ /* тенический вспомогателный outline */
 }
 
 .content__card-link {
@@ -305,24 +324,25 @@ ol {
   align-items: flex-start;
 }
 
-.content__video-card-title {
-  font-size: 2.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 100%;
-  letter-spacing: -0.13rem;
-  inline-size: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .content__video-card-description-container {
   word-spacing: 8px;
   inline-size: 49%;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+  inline-size: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* запрещает перенос текста на следующую строку. */
+  overflow: hidden;
+  margin-bottom: 3px;
 }
 
 .content__video-card-description {
@@ -332,7 +352,9 @@ ol {
   -webkit-line-clamp: 2;
   line-clamp: 2;
   overflow: hidden;
-  line-height: 90%;
+  line-height: 100%;
+  letter-spacing: -0.014rem;
+  word-spacing: 0.6rem;
 }
 
 .content__video-card-thumbnail {
@@ -349,9 +371,9 @@ ol {
 .button-container {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .more-button {
-  letter-spacing: -0.08rem;
   inline-size: calc(100% - 6px);
 }

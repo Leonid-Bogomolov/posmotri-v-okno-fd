@@ -353,7 +353,8 @@ ol {
   overflow: hidden;
   line-height: 100%;
   letter-spacing: -0.014rem;
-  word-spacing: 0.6rem;
+  /* word-spacing: 0.6rem;*/
+  word-spacing: -0.1rem; /* С учётом грамматической ошшибки в макете */
 }
 
 .content__video-card-thumbnail {
